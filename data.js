@@ -1,0 +1,2098 @@
+window.F1_DATA={
+  "manifest": {
+    "package": "f1-2026-strategy-data",
+    "version": "0.1.0",
+    "created": "2026-07-22",
+    "files": [
+      "data/source-catalog.json",
+      "data/season.json",
+      "data/teams.json",
+      "data/drivers.json",
+      "data/circuits.json",
+      "data/tyres.json",
+      "data/regulations.json",
+      "data/model-config.json",
+      "data/example-race-request.json",
+      "data/all-in-one.json",
+      "schemas/race-request.schema.json",
+      "schemas/strategy-response.schema.json",
+      "README.md"
+    ]
+  },
+  "sources": {
+    "snapshotDate": "2026-07-22",
+    "sources": [
+      {
+        "id": "f1-teams-2026",
+        "publisher": "Formula 1",
+        "title": "F1 Teams 2026",
+        "url": "https://www.formula1.com/en/teams",
+        "usedFor": [
+          "team list",
+          "driver-team pairings"
+        ]
+      },
+      {
+        "id": "f1-drivers-2026",
+        "publisher": "Formula 1",
+        "title": "F1 Drivers 2026",
+        "url": "https://www.formula1.com/en/drivers",
+        "usedFor": [
+          "driver list",
+          "driver-team pairings"
+        ]
+      },
+      {
+        "id": "f1-driver-numbers-2026",
+        "publisher": "Formula 1",
+        "title": "All the 2026 F1 driver numbers confirmed in full",
+        "url": "https://www.formula1.com/en/latest/article/all-the-2026-f1-driver-numbers-confirmed-in-full.5rh7o9mPntG7NerzVk9onc",
+        "usedFor": [
+          "2026 race numbers"
+        ]
+      },
+      {
+        "id": "f1-driver-standings-2026",
+        "publisher": "Formula 1",
+        "title": "2026 Drivers' Standings",
+        "url": "https://www.formula1.com/en/results/2026/drivers",
+        "usedFor": [
+          "driver standings snapshot",
+          "driver points"
+        ]
+      },
+      {
+        "id": "f1-team-standings-2026",
+        "publisher": "Formula 1",
+        "title": "2026 Teams' Standings",
+        "url": "https://www.formula1.com/en/results/2026/team",
+        "usedFor": [
+          "team standings snapshot",
+          "team points"
+        ]
+      },
+      {
+        "id": "f1-silverstone-2026",
+        "publisher": "Formula 1",
+        "title": "British Grand Prix 2026",
+        "url": "https://www.formula1.com/en/racing/2026/great-britain",
+        "usedFor": [
+          "circuit length",
+          "race laps",
+          "race distance",
+          "Sprint format",
+          "2026 result"
+        ]
+      },
+      {
+        "id": "f1-spa-2026",
+        "publisher": "Formula 1",
+        "title": "Belgian Grand Prix 2026",
+        "url": "https://www.formula1.com/en/racing/2026/belgium",
+        "usedFor": [
+          "circuit length",
+          "race laps",
+          "race distance",
+          "2026 result"
+        ]
+      },
+      {
+        "id": "f1-suzuka-2026",
+        "publisher": "Formula 1",
+        "title": "Japanese Grand Prix 2026",
+        "url": "https://www.formula1.com/en/racing/2026/japan",
+        "usedFor": [
+          "circuit length",
+          "race laps",
+          "race distance",
+          "2026 result"
+        ]
+      },
+      {
+        "id": "pirelli-2026-range",
+        "publisher": "Pirelli",
+        "title": "Pirelli reveals 2026 F1 tyres",
+        "url": "https://press.pirelli.com/pirelli-reveals-2026-f1-tyres-a-fresh-logo-design-and-new-compounds/",
+        "usedFor": [
+          "C1-C5 range",
+          "Intermediate",
+          "Full Wet",
+          "2026 tyre dimensions"
+        ]
+      },
+      {
+        "id": "pirelli-silverstone-2026-preview",
+        "publisher": "Pirelli",
+        "title": "The challenges of Silverstone, the cradle of motorsport",
+        "url": "https://press.pirelli.com/the-challenges-of-silverstone-the-cradle-of-motorsport/",
+        "usedFor": [
+          "C1/C2/C3 nomination",
+          "front axle stress",
+          "left-front wear",
+          "high lateral loads"
+        ]
+      },
+      {
+        "id": "pirelli-silverstone-2026-race",
+        "publisher": "Pirelli",
+        "title": "Leclerc paints Silverstone red",
+        "url": "https://press.pirelli.com/leclerc-paints-silverstone-red/",
+        "usedFor": [
+          "2026 race strategy reference",
+          "Medium-to-Hard baseline",
+          "late Safety Car effects"
+        ]
+      },
+      {
+        "id": "pirelli-spa-2026-preview",
+        "publisher": "Pirelli",
+        "title": "Formula 1 faces its Spa-Francorchamps exam",
+        "url": "https://press.pirelli.com/formula-1-faces-its-spa-francorchamps-exam/",
+        "usedFor": [
+          "C2/C3/C4 nomination",
+          "tyre stress",
+          "track characteristics"
+        ]
+      },
+      {
+        "id": "pirelli-spa-2026-race",
+        "publisher": "Pirelli",
+        "title": "Antonelli wins at the legendary Spa-Francorchamps circuit",
+        "url": "https://press.pirelli.com/antonelli-wins-at-the-legendary-spa-francorchamps-circuit/",
+        "usedFor": [
+          "2026 race strategy reference",
+          "Medium-to-Hard baseline",
+          "degradation observations"
+        ]
+      },
+      {
+        "id": "pirelli-suzuka-2026-preview",
+        "publisher": "Pirelli",
+        "title": "The Suzuka challenge with the hardest trio in the range",
+        "url": "https://press.pirelli.com/the-suzuka-challenge-with-the-hardest-trio-in-the-range/",
+        "usedFor": [
+          "C1/C2/C3 nomination",
+          "continuous direction changes",
+          "high tyre loads"
+        ]
+      },
+      {
+        "id": "pirelli-suzuka-2026-race",
+        "publisher": "Pirelli",
+        "title": "Second consecutive Grand Prix victory for Antonelli",
+        "url": "https://press.pirelli.com/second-consecutive-grand-prix-victory-for-antonelli/",
+        "usedFor": [
+          "2026 race strategy reference",
+          "Medium-to-Hard baseline",
+          "Safety Car effect"
+        ]
+      },
+      {
+        "id": "fia-sporting-2026-issue-07",
+        "publisher": "FIA",
+        "title": "2026 Formula 1 Sporting Regulations ??Section B, Issue 07",
+        "url": "https://www.fia.com/system/files/documents/fia_2026_f1_regulations_-_section_b_sporting_-_iss_07_-_2026-06-25.pdf",
+        "usedFor": [
+          "tyre allocation",
+          "dry-race compound rule",
+          "wet exceptions",
+          "Sprint tyre rules"
+        ]
+      }
+    ]
+  },
+  "season": {
+    "season": 2026,
+    "name": "2026 FIA Formula One World Championship",
+    "dataSnapshotDate": "2026-07-22",
+    "gridSize": {
+      "teams": 11,
+      "drivers": 22
+    },
+    "supportedCircuits": [
+      "silverstone",
+      "spa-francorchamps",
+      "suzuka"
+    ],
+    "regulationSetId": "fia-2026-sporting-issue-07",
+    "tyreSetId": "pirelli-2026",
+    "dataPolicy": {
+      "officialFacts": "Stored under officialSnapshot or officialRule provenance.",
+      "modelValues": "Stored under strategyModelSeed and must not be displayed as official F1 data.",
+      "recommendedRefresh": "Refresh standings and FIA issue number after each race or regulation update."
+    },
+    "sourceRefs": [
+      "f1-teams-2026",
+      "f1-drivers-2026",
+      "f1-driver-standings-2026",
+      "f1-team-standings-2026",
+      "fia-sporting-2026-issue-07"
+    ]
+  },
+  "teams": [
+    {
+      "id": "mercedes",
+      "name": "Mercedes",
+      "season": 2026,
+      "standings": {
+        "position": 1,
+        "points": 358,
+        "snapshotDate": "2026-07-22",
+        "provenance": "officialSnapshot",
+        "sourceRefs": [
+          "f1-team-standings-2026"
+        ]
+      },
+      "drivers": [
+        "kimi-antonelli",
+        "george-russell"
+      ],
+      "presentation": {
+        "uiAccentHex": "#00A19C",
+        "note": "Design seed only; not claimed as an official brand colour."
+      },
+      "strategyModelSeed": {
+        "racePaceIndex": 95.0,
+        "tyreDegradationMultiplier": 0.996,
+        "tyreWarmupMultiplier": 0.992,
+        "dirtyAirSensitivityMultiplier": 1.0,
+        "pitStopExecutionSeconds": 2.6,
+        "reliabilityMultiplier": 1.0,
+        "confidence": "low",
+        "provenance": "modelDerivedFrom2026ConstructorPoints",
+        "calibrationRequired": true
+      },
+      "sourceRefs": [
+        "f1-teams-2026",
+        "f1-team-standings-2026"
+      ]
+    },
+    {
+      "id": "ferrari",
+      "name": "Ferrari",
+      "season": 2026,
+      "standings": {
+        "position": 2,
+        "points": 285,
+        "snapshotDate": "2026-07-22",
+        "provenance": "officialSnapshot",
+        "sourceRefs": [
+          "f1-team-standings-2026"
+        ]
+      },
+      "drivers": [
+        "lewis-hamilton",
+        "charles-leclerc"
+      ],
+      "presentation": {
+        "uiAccentHex": "#E80020",
+        "note": "Design seed only; not claimed as an official brand colour."
+      },
+      "strategyModelSeed": {
+        "racePaceIndex": 92.5,
+        "tyreDegradationMultiplier": 0.999,
+        "tyreWarmupMultiplier": 0.994,
+        "dirtyAirSensitivityMultiplier": 1.0,
+        "pitStopExecutionSeconds": 2.6,
+        "reliabilityMultiplier": 1.0,
+        "confidence": "low",
+        "provenance": "modelDerivedFrom2026ConstructorPoints",
+        "calibrationRequired": true
+      },
+      "sourceRefs": [
+        "f1-teams-2026",
+        "f1-team-standings-2026"
+      ]
+    },
+    {
+      "id": "mclaren",
+      "name": "McLaren",
+      "season": 2026,
+      "standings": {
+        "position": 3,
+        "points": 195,
+        "snapshotDate": "2026-07-22",
+        "provenance": "officialSnapshot",
+        "sourceRefs": [
+          "f1-team-standings-2026"
+        ]
+      },
+      "drivers": [
+        "lando-norris",
+        "oscar-piastri"
+      ],
+      "presentation": {
+        "uiAccentHex": "#FF8000",
+        "note": "Design seed only; not claimed as an official brand colour."
+      },
+      "strategyModelSeed": {
+        "racePaceIndex": 89.0,
+        "tyreDegradationMultiplier": 1.004,
+        "tyreWarmupMultiplier": 0.998,
+        "dirtyAirSensitivityMultiplier": 1.0,
+        "pitStopExecutionSeconds": 2.6,
+        "reliabilityMultiplier": 1.0,
+        "confidence": "low",
+        "provenance": "modelDerivedFrom2026ConstructorPoints",
+        "calibrationRequired": true
+      },
+      "sourceRefs": [
+        "f1-teams-2026",
+        "f1-team-standings-2026"
+      ]
+    },
+    {
+      "id": "red-bull-racing",
+      "name": "Red Bull Racing",
+      "season": 2026,
+      "standings": {
+        "position": 4,
+        "points": 151,
+        "snapshotDate": "2026-07-22",
+        "provenance": "officialSnapshot",
+        "sourceRefs": [
+          "f1-team-standings-2026"
+        ]
+      },
+      "drivers": [
+        "max-verstappen",
+        "isack-hadjar"
+      ],
+      "presentation": {
+        "uiAccentHex": "#3671C6",
+        "note": "Design seed only; not claimed as an official brand colour."
+      },
+      "strategyModelSeed": {
+        "racePaceIndex": 86.9,
+        "tyreDegradationMultiplier": 1.008,
+        "tyreWarmupMultiplier": 1.0,
+        "dirtyAirSensitivityMultiplier": 1.0,
+        "pitStopExecutionSeconds": 2.6,
+        "reliabilityMultiplier": 1.0,
+        "confidence": "low",
+        "provenance": "modelDerivedFrom2026ConstructorPoints",
+        "calibrationRequired": true
+      },
+      "sourceRefs": [
+        "f1-teams-2026",
+        "f1-team-standings-2026"
+      ]
+    },
+    {
+      "id": "alpine",
+      "name": "Alpine",
+      "season": 2026,
+      "standings": {
+        "position": 5,
+        "points": 61,
+        "snapshotDate": "2026-07-22",
+        "provenance": "officialSnapshot",
+        "sourceRefs": [
+          "f1-team-standings-2026"
+        ]
+      },
+      "drivers": [
+        "pierre-gasly",
+        "franco-colapinto"
+      ],
+      "presentation": {
+        "uiAccentHex": "#0093CC",
+        "note": "Design seed only; not claimed as an official brand colour."
+      },
+      "strategyModelSeed": {
+        "racePaceIndex": 81.5,
+        "tyreDegradationMultiplier": 1.016,
+        "tyreWarmupMultiplier": 1.005,
+        "dirtyAirSensitivityMultiplier": 1.0,
+        "pitStopExecutionSeconds": 2.6,
+        "reliabilityMultiplier": 1.0,
+        "confidence": "low",
+        "provenance": "modelDerivedFrom2026ConstructorPoints",
+        "calibrationRequired": true
+      },
+      "sourceRefs": [
+        "f1-teams-2026",
+        "f1-team-standings-2026"
+      ]
+    },
+    {
+      "id": "racing-bulls",
+      "name": "Racing Bulls",
+      "season": 2026,
+      "standings": {
+        "position": 6,
+        "points": 61,
+        "snapshotDate": "2026-07-22",
+        "provenance": "officialSnapshot",
+        "sourceRefs": [
+          "f1-team-standings-2026"
+        ]
+      },
+      "drivers": [
+        "liam-lawson",
+        "arvid-lindblad"
+      ],
+      "presentation": {
+        "uiAccentHex": "#6692FF",
+        "note": "Design seed only; not claimed as an official brand colour."
+      },
+      "strategyModelSeed": {
+        "racePaceIndex": 81.5,
+        "tyreDegradationMultiplier": 1.016,
+        "tyreWarmupMultiplier": 1.005,
+        "dirtyAirSensitivityMultiplier": 1.0,
+        "pitStopExecutionSeconds": 2.6,
+        "reliabilityMultiplier": 1.0,
+        "confidence": "low",
+        "provenance": "modelDerivedFrom2026ConstructorPoints",
+        "calibrationRequired": true
+      },
+      "sourceRefs": [
+        "f1-teams-2026",
+        "f1-team-standings-2026"
+      ]
+    },
+    {
+      "id": "haas",
+      "name": "Haas F1 Team",
+      "season": 2026,
+      "standings": {
+        "position": 7,
+        "points": 21,
+        "snapshotDate": "2026-07-22",
+        "provenance": "officialSnapshot",
+        "sourceRefs": [
+          "f1-team-standings-2026"
+        ]
+      },
+      "drivers": [
+        "oliver-bearman",
+        "esteban-ocon"
+      ],
+      "presentation": {
+        "uiAccentHex": "#B6BABD",
+        "note": "Design seed only; not claimed as an official brand colour."
+      },
+      "strategyModelSeed": {
+        "racePaceIndex": 77.6,
+        "tyreDegradationMultiplier": 1.022,
+        "tyreWarmupMultiplier": 1.009,
+        "dirtyAirSensitivityMultiplier": 1.0,
+        "pitStopExecutionSeconds": 2.6,
+        "reliabilityMultiplier": 1.0,
+        "confidence": "low",
+        "provenance": "modelDerivedFrom2026ConstructorPoints",
+        "calibrationRequired": true
+      },
+      "sourceRefs": [
+        "f1-teams-2026",
+        "f1-team-standings-2026"
+      ]
+    },
+    {
+      "id": "williams",
+      "name": "Williams",
+      "season": 2026,
+      "standings": {
+        "position": 8,
+        "points": 11,
+        "snapshotDate": "2026-07-22",
+        "provenance": "officialSnapshot",
+        "sourceRefs": [
+          "f1-team-standings-2026"
+        ]
+      },
+      "drivers": [
+        "carlos-sainz",
+        "alexander-albon"
+      ],
+      "presentation": {
+        "uiAccentHex": "#64C4FF",
+        "note": "Design seed only; not claimed as an official brand colour."
+      },
+      "strategyModelSeed": {
+        "racePaceIndex": 76.0,
+        "tyreDegradationMultiplier": 1.024,
+        "tyreWarmupMultiplier": 1.011,
+        "dirtyAirSensitivityMultiplier": 1.0,
+        "pitStopExecutionSeconds": 2.6,
+        "reliabilityMultiplier": 1.0,
+        "confidence": "low",
+        "provenance": "modelDerivedFrom2026ConstructorPoints",
+        "calibrationRequired": true
+      },
+      "sourceRefs": [
+        "f1-teams-2026",
+        "f1-team-standings-2026"
+      ]
+    },
+    {
+      "id": "audi",
+      "name": "Audi",
+      "season": 2026,
+      "standings": {
+        "position": 9,
+        "points": 10,
+        "snapshotDate": "2026-07-22",
+        "provenance": "officialSnapshot",
+        "sourceRefs": [
+          "f1-team-standings-2026"
+        ]
+      },
+      "drivers": [
+        "gabriel-bortoleto",
+        "nico-hulkenberg"
+      ],
+      "presentation": {
+        "uiAccentHex": "#E31B23",
+        "note": "Design seed only; not claimed as an official brand colour."
+      },
+      "strategyModelSeed": {
+        "racePaceIndex": 75.8,
+        "tyreDegradationMultiplier": 1.024,
+        "tyreWarmupMultiplier": 1.011,
+        "dirtyAirSensitivityMultiplier": 1.0,
+        "pitStopExecutionSeconds": 2.6,
+        "reliabilityMultiplier": 1.0,
+        "confidence": "low",
+        "provenance": "modelDerivedFrom2026ConstructorPoints",
+        "calibrationRequired": true
+      },
+      "sourceRefs": [
+        "f1-teams-2026",
+        "f1-team-standings-2026"
+      ]
+    },
+    {
+      "id": "aston-martin",
+      "name": "Aston Martin",
+      "season": 2026,
+      "standings": {
+        "position": 10,
+        "points": 1,
+        "snapshotDate": "2026-07-22",
+        "provenance": "officialSnapshot",
+        "sourceRefs": [
+          "f1-team-standings-2026"
+        ]
+      },
+      "drivers": [
+        "fernando-alonso",
+        "lance-stroll"
+      ],
+      "presentation": {
+        "uiAccentHex": "#229971",
+        "note": "Design seed only; not claimed as an official brand colour."
+      },
+      "strategyModelSeed": {
+        "racePaceIndex": 73.2,
+        "tyreDegradationMultiplier": 1.028,
+        "tyreWarmupMultiplier": 1.014,
+        "dirtyAirSensitivityMultiplier": 1.0,
+        "pitStopExecutionSeconds": 2.6,
+        "reliabilityMultiplier": 1.0,
+        "confidence": "low",
+        "provenance": "modelDerivedFrom2026ConstructorPoints",
+        "calibrationRequired": true
+      },
+      "sourceRefs": [
+        "f1-teams-2026",
+        "f1-team-standings-2026"
+      ]
+    },
+    {
+      "id": "cadillac",
+      "name": "Cadillac",
+      "season": 2026,
+      "standings": {
+        "position": 11,
+        "points": 0,
+        "snapshotDate": "2026-07-22",
+        "provenance": "officialSnapshot",
+        "sourceRefs": [
+          "f1-team-standings-2026"
+        ]
+      },
+      "drivers": [
+        "valtteri-bottas",
+        "sergio-perez"
+      ],
+      "presentation": {
+        "uiAccentHex": "#B8B8B8",
+        "note": "Design seed only; not claimed as an official brand colour."
+      },
+      "strategyModelSeed": {
+        "racePaceIndex": 72.0,
+        "tyreDegradationMultiplier": 1.03,
+        "tyreWarmupMultiplier": 1.015,
+        "dirtyAirSensitivityMultiplier": 1.0,
+        "pitStopExecutionSeconds": 2.6,
+        "reliabilityMultiplier": 1.0,
+        "confidence": "low",
+        "provenance": "modelDerivedFrom2026ConstructorPoints",
+        "calibrationRequired": true
+      },
+      "sourceRefs": [
+        "f1-teams-2026",
+        "f1-team-standings-2026"
+      ]
+    }
+  ],
+  "drivers": [
+    {
+      "id": "kimi-antonelli",
+      "name": "Kimi Antonelli",
+      "code": "ANT",
+      "raceNumber": 12,
+      "nationality": {
+        "code": "ITA",
+        "label": "Italian"
+      },
+      "teamId": "mercedes",
+      "season": 2026,
+      "standings": {
+        "position": 1,
+        "points": 204,
+        "snapshotDate": "2026-07-22",
+        "provenance": "officialSnapshot",
+        "sourceRefs": [
+          "f1-driver-standings-2026"
+        ]
+      },
+      "experienceBand": "developing",
+      "strategyModelSeed": {
+        "racePaceIndex": 95.0,
+        "tyreManagementMultiplier": 0.995,
+        "wetSkillIndex": 84.8,
+        "trafficAndOvertakingIndex": 89.0,
+        "outLapWarmupMultiplier": 1.0,
+        "riskTolerance": 0.5,
+        "confidence": "low",
+        "provenance": "modelDerivedFrom2026PointsAndExperienceBand",
+        "calibrationRequired": true
+      },
+      "sourceRefs": [
+        "f1-drivers-2026",
+        "f1-driver-numbers-2026",
+        "f1-driver-standings-2026"
+      ]
+    },
+    {
+      "id": "lewis-hamilton",
+      "name": "Lewis Hamilton",
+      "code": "HAM",
+      "raceNumber": 44,
+      "nationality": {
+        "code": "GBR",
+        "label": "British"
+      },
+      "teamId": "ferrari",
+      "season": 2026,
+      "standings": {
+        "position": 2,
+        "points": 159,
+        "snapshotDate": "2026-07-22",
+        "provenance": "officialSnapshot",
+        "sourceRefs": [
+          "f1-driver-standings-2026"
+        ]
+      },
+      "experienceBand": "veteran",
+      "strategyModelSeed": {
+        "racePaceIndex": 92.1,
+        "tyreManagementMultiplier": 0.99,
+        "wetSkillIndex": 89.7,
+        "trafficAndOvertakingIndex": 91.3,
+        "outLapWarmupMultiplier": 1.0,
+        "riskTolerance": 0.5,
+        "confidence": "low",
+        "provenance": "modelDerivedFrom2026PointsAndExperienceBand",
+        "calibrationRequired": true
+      },
+      "sourceRefs": [
+        "f1-drivers-2026",
+        "f1-driver-numbers-2026",
+        "f1-driver-standings-2026"
+      ]
+    },
+    {
+      "id": "george-russell",
+      "name": "George Russell",
+      "code": "RUS",
+      "raceNumber": 63,
+      "nationality": {
+        "code": "GBR",
+        "label": "British"
+      },
+      "teamId": "mercedes",
+      "season": 2026,
+      "standings": {
+        "position": 3,
+        "points": 154,
+        "snapshotDate": "2026-07-22",
+        "provenance": "officialSnapshot",
+        "sourceRefs": [
+          "f1-driver-standings-2026"
+        ]
+      },
+      "experienceBand": "experienced",
+      "strategyModelSeed": {
+        "racePaceIndex": 91.7,
+        "tyreManagementMultiplier": 0.993,
+        "wetSkillIndex": 87.6,
+        "trafficAndOvertakingIndex": 89.6,
+        "outLapWarmupMultiplier": 1.0,
+        "riskTolerance": 0.5,
+        "confidence": "low",
+        "provenance": "modelDerivedFrom2026PointsAndExperienceBand",
+        "calibrationRequired": true
+      },
+      "sourceRefs": [
+        "f1-drivers-2026",
+        "f1-driver-numbers-2026",
+        "f1-driver-standings-2026"
+      ]
+    },
+    {
+      "id": "charles-leclerc",
+      "name": "Charles Leclerc",
+      "code": "LEC",
+      "raceNumber": 16,
+      "nationality": {
+        "code": "MON",
+        "label": "Monegasque"
+      },
+      "teamId": "ferrari",
+      "season": 2026,
+      "standings": {
+        "position": 4,
+        "points": 126,
+        "snapshotDate": "2026-07-22",
+        "provenance": "officialSnapshot",
+        "sourceRefs": [
+          "f1-driver-standings-2026"
+        ]
+      },
+      "experienceBand": "experienced",
+      "strategyModelSeed": {
+        "racePaceIndex": 89.6,
+        "tyreManagementMultiplier": 0.995,
+        "wetSkillIndex": 86.9,
+        "trafficAndOvertakingIndex": 88.2,
+        "outLapWarmupMultiplier": 1.0,
+        "riskTolerance": 0.5,
+        "confidence": "low",
+        "provenance": "modelDerivedFrom2026PointsAndExperienceBand",
+        "calibrationRequired": true
+      },
+      "sourceRefs": [
+        "f1-drivers-2026",
+        "f1-driver-numbers-2026",
+        "f1-driver-standings-2026"
+      ]
+    },
+    {
+      "id": "lando-norris",
+      "name": "Lando Norris",
+      "code": "NOR",
+      "raceNumber": 1,
+      "nationality": {
+        "code": "GBR",
+        "label": "British"
+      },
+      "teamId": "mclaren",
+      "season": 2026,
+      "standings": {
+        "position": 5,
+        "points": 103,
+        "snapshotDate": "2026-07-22",
+        "provenance": "officialSnapshot",
+        "sourceRefs": [
+          "f1-driver-standings-2026"
+        ]
+      },
+      "experienceBand": "experienced",
+      "strategyModelSeed": {
+        "racePaceIndex": 87.8,
+        "tyreManagementMultiplier": 0.998,
+        "wetSkillIndex": 86.2,
+        "trafficAndOvertakingIndex": 87.1,
+        "outLapWarmupMultiplier": 1.0,
+        "riskTolerance": 0.5,
+        "confidence": "low",
+        "provenance": "modelDerivedFrom2026PointsAndExperienceBand",
+        "calibrationRequired": true
+      },
+      "sourceRefs": [
+        "f1-drivers-2026",
+        "f1-driver-numbers-2026",
+        "f1-driver-standings-2026"
+      ]
+    },
+    {
+      "id": "oscar-piastri",
+      "name": "Oscar Piastri",
+      "code": "PIA",
+      "raceNumber": 81,
+      "nationality": {
+        "code": "AUS",
+        "label": "Australian"
+      },
+      "teamId": "mclaren",
+      "season": 2026,
+      "standings": {
+        "position": 6,
+        "points": 92,
+        "snapshotDate": "2026-07-22",
+        "provenance": "officialSnapshot",
+        "sourceRefs": [
+          "f1-driver-standings-2026"
+        ]
+      },
+      "experienceBand": "established",
+      "strategyModelSeed": {
+        "racePaceIndex": 86.8,
+        "tyreManagementMultiplier": 1.002,
+        "wetSkillIndex": 83.9,
+        "trafficAndOvertakingIndex": 85.0,
+        "outLapWarmupMultiplier": 1.0,
+        "riskTolerance": 0.5,
+        "confidence": "low",
+        "provenance": "modelDerivedFrom2026PointsAndExperienceBand",
+        "calibrationRequired": true
+      },
+      "sourceRefs": [
+        "f1-drivers-2026",
+        "f1-driver-numbers-2026",
+        "f1-driver-standings-2026"
+      ]
+    },
+    {
+      "id": "max-verstappen",
+      "name": "Max Verstappen",
+      "code": "VER",
+      "raceNumber": 3,
+      "nationality": {
+        "code": "NED",
+        "label": "Dutch"
+      },
+      "teamId": "red-bull-racing",
+      "season": 2026,
+      "standings": {
+        "position": 7,
+        "points": 91,
+        "snapshotDate": "2026-07-22",
+        "provenance": "officialSnapshot",
+        "sourceRefs": [
+          "f1-driver-standings-2026"
+        ]
+      },
+      "experienceBand": "experienced",
+      "strategyModelSeed": {
+        "racePaceIndex": 86.7,
+        "tyreManagementMultiplier": 0.999,
+        "wetSkillIndex": 85.8,
+        "trafficAndOvertakingIndex": 86.4,
+        "outLapWarmupMultiplier": 1.0,
+        "riskTolerance": 0.5,
+        "confidence": "low",
+        "provenance": "modelDerivedFrom2026PointsAndExperienceBand",
+        "calibrationRequired": true
+      },
+      "sourceRefs": [
+        "f1-drivers-2026",
+        "f1-driver-numbers-2026",
+        "f1-driver-standings-2026"
+      ]
+    },
+    {
+      "id": "isack-hadjar",
+      "name": "Isack Hadjar",
+      "code": "HAD",
+      "raceNumber": 6,
+      "nationality": {
+        "code": "FRA",
+        "label": "French"
+      },
+      "teamId": "red-bull-racing",
+      "season": 2026,
+      "standings": {
+        "position": 8,
+        "points": 60,
+        "snapshotDate": "2026-07-22",
+        "provenance": "officialSnapshot",
+        "sourceRefs": [
+          "f1-driver-standings-2026"
+        ]
+      },
+      "experienceBand": "developing",
+      "strategyModelSeed": {
+        "racePaceIndex": 83.6,
+        "tyreManagementMultiplier": 1.009,
+        "wetSkillIndex": 80.8,
+        "trafficAndOvertakingIndex": 81.5,
+        "outLapWarmupMultiplier": 1.0,
+        "riskTolerance": 0.5,
+        "confidence": "low",
+        "provenance": "modelDerivedFrom2026PointsAndExperienceBand",
+        "calibrationRequired": true
+      },
+      "sourceRefs": [
+        "f1-drivers-2026",
+        "f1-driver-numbers-2026",
+        "f1-driver-standings-2026"
+      ]
+    },
+    {
+      "id": "pierre-gasly",
+      "name": "Pierre Gasly",
+      "code": "GAS",
+      "raceNumber": 10,
+      "nationality": {
+        "code": "FRA",
+        "label": "French"
+      },
+      "teamId": "alpine",
+      "season": 2026,
+      "standings": {
+        "position": 9,
+        "points": 42,
+        "snapshotDate": "2026-07-22",
+        "provenance": "officialSnapshot",
+        "sourceRefs": [
+          "f1-driver-standings-2026"
+        ]
+      },
+      "experienceBand": "experienced",
+      "strategyModelSeed": {
+        "racePaceIndex": 81.3,
+        "tyreManagementMultiplier": 1.005,
+        "wetSkillIndex": 84.0,
+        "trafficAndOvertakingIndex": 82.8,
+        "outLapWarmupMultiplier": 1.0,
+        "riskTolerance": 0.5,
+        "confidence": "low",
+        "provenance": "modelDerivedFrom2026PointsAndExperienceBand",
+        "calibrationRequired": true
+      },
+      "sourceRefs": [
+        "f1-drivers-2026",
+        "f1-driver-numbers-2026",
+        "f1-driver-standings-2026"
+      ]
+    },
+    {
+      "id": "liam-lawson",
+      "name": "Liam Lawson",
+      "code": "LAW",
+      "raceNumber": 30,
+      "nationality": {
+        "code": "NZL",
+        "label": "New Zealander"
+      },
+      "teamId": "racing-bulls",
+      "season": 2026,
+      "standings": {
+        "position": 10,
+        "points": 39,
+        "snapshotDate": "2026-07-22",
+        "provenance": "officialSnapshot",
+        "sourceRefs": [
+          "f1-driver-standings-2026"
+        ]
+      },
+      "experienceBand": "established",
+      "strategyModelSeed": {
+        "racePaceIndex": 80.9,
+        "tyreManagementMultiplier": 1.009,
+        "wetSkillIndex": 81.8,
+        "trafficAndOvertakingIndex": 81.2,
+        "outLapWarmupMultiplier": 1.0,
+        "riskTolerance": 0.5,
+        "confidence": "low",
+        "provenance": "modelDerivedFrom2026PointsAndExperienceBand",
+        "calibrationRequired": true
+      },
+      "sourceRefs": [
+        "f1-drivers-2026",
+        "f1-driver-numbers-2026",
+        "f1-driver-standings-2026"
+      ]
+    },
+    {
+      "id": "arvid-lindblad",
+      "name": "Arvid Lindblad",
+      "code": "LIN",
+      "raceNumber": 41,
+      "nationality": {
+        "code": "GBR",
+        "label": "British"
+      },
+      "teamId": "racing-bulls",
+      "season": 2026,
+      "standings": {
+        "position": 11,
+        "points": 22,
+        "snapshotDate": "2026-07-22",
+        "provenance": "officialSnapshot",
+        "sourceRefs": [
+          "f1-driver-standings-2026"
+        ]
+      },
+      "experienceBand": "rookie",
+      "strategyModelSeed": {
+        "racePaceIndex": 78.2,
+        "tyreManagementMultiplier": 1.017,
+        "wetSkillIndex": 77.9,
+        "trafficAndOvertakingIndex": 77.3,
+        "outLapWarmupMultiplier": 1.0,
+        "riskTolerance": 0.5,
+        "confidence": "low",
+        "provenance": "modelDerivedFrom2026PointsAndExperienceBand",
+        "calibrationRequired": true
+      },
+      "sourceRefs": [
+        "f1-drivers-2026",
+        "f1-driver-numbers-2026",
+        "f1-driver-standings-2026"
+      ]
+    },
+    {
+      "id": "franco-colapinto",
+      "name": "Franco Colapinto",
+      "code": "COL",
+      "raceNumber": 43,
+      "nationality": {
+        "code": "ARG",
+        "label": "Argentine"
+      },
+      "teamId": "alpine",
+      "season": 2026,
+      "standings": {
+        "position": 12,
+        "points": 19,
+        "snapshotDate": "2026-07-22",
+        "provenance": "officialSnapshot",
+        "sourceRefs": [
+          "f1-driver-standings-2026"
+        ]
+      },
+      "experienceBand": "developing",
+      "strategyModelSeed": {
+        "racePaceIndex": 77.6,
+        "tyreManagementMultiplier": 1.016,
+        "wetSkillIndex": 78.7,
+        "trafficAndOvertakingIndex": 77.6,
+        "outLapWarmupMultiplier": 1.0,
+        "riskTolerance": 0.5,
+        "confidence": "low",
+        "provenance": "modelDerivedFrom2026PointsAndExperienceBand",
+        "calibrationRequired": true
+      },
+      "sourceRefs": [
+        "f1-drivers-2026",
+        "f1-driver-numbers-2026",
+        "f1-driver-standings-2026"
+      ]
+    },
+    {
+      "id": "oliver-bearman",
+      "name": "Oliver Bearman",
+      "code": "BEA",
+      "raceNumber": 87,
+      "nationality": {
+        "code": "GBR",
+        "label": "British"
+      },
+      "teamId": "haas",
+      "season": 2026,
+      "standings": {
+        "position": 13,
+        "points": 18,
+        "snapshotDate": "2026-07-22",
+        "provenance": "officialSnapshot",
+        "sourceRefs": [
+          "f1-driver-standings-2026"
+        ]
+      },
+      "experienceBand": "developing",
+      "strategyModelSeed": {
+        "racePaceIndex": 77.4,
+        "tyreManagementMultiplier": 1.016,
+        "wetSkillIndex": 78.6,
+        "trafficAndOvertakingIndex": 77.5,
+        "outLapWarmupMultiplier": 1.0,
+        "riskTolerance": 0.5,
+        "confidence": "low",
+        "provenance": "modelDerivedFrom2026PointsAndExperienceBand",
+        "calibrationRequired": true
+      },
+      "sourceRefs": [
+        "f1-drivers-2026",
+        "f1-driver-numbers-2026",
+        "f1-driver-standings-2026"
+      ]
+    },
+    {
+      "id": "gabriel-bortoleto",
+      "name": "Gabriel Bortoleto",
+      "code": "BOR",
+      "raceNumber": 5,
+      "nationality": {
+        "code": "BRA",
+        "label": "Brazilian"
+      },
+      "teamId": "audi",
+      "season": 2026,
+      "standings": {
+        "position": 14,
+        "points": 10,
+        "snapshotDate": "2026-07-22",
+        "provenance": "officialSnapshot",
+        "sourceRefs": [
+          "f1-driver-standings-2026"
+        ]
+      },
+      "experienceBand": "developing",
+      "strategyModelSeed": {
+        "racePaceIndex": 75.5,
+        "tyreManagementMultiplier": 1.018,
+        "wetSkillIndex": 77.9,
+        "trafficAndOvertakingIndex": 76.3,
+        "outLapWarmupMultiplier": 1.0,
+        "riskTolerance": 0.5,
+        "confidence": "low",
+        "provenance": "modelDerivedFrom2026PointsAndExperienceBand",
+        "calibrationRequired": true
+      },
+      "sourceRefs": [
+        "f1-drivers-2026",
+        "f1-driver-numbers-2026",
+        "f1-driver-standings-2026"
+      ]
+    },
+    {
+      "id": "carlos-sainz",
+      "name": "Carlos Sainz",
+      "code": "SAI",
+      "raceNumber": 55,
+      "nationality": {
+        "code": "ESP",
+        "label": "Spanish"
+      },
+      "teamId": "williams",
+      "season": 2026,
+      "standings": {
+        "position": 15,
+        "points": 6,
+        "snapshotDate": "2026-07-22",
+        "provenance": "officialSnapshot",
+        "sourceRefs": [
+          "f1-driver-standings-2026"
+        ]
+      },
+      "experienceBand": "experienced",
+      "strategyModelSeed": {
+        "racePaceIndex": 74.3,
+        "tyreManagementMultiplier": 1.014,
+        "wetSkillIndex": 81.5,
+        "trafficAndOvertakingIndex": 78.3,
+        "outLapWarmupMultiplier": 1.0,
+        "riskTolerance": 0.5,
+        "confidence": "low",
+        "provenance": "modelDerivedFrom2026PointsAndExperienceBand",
+        "calibrationRequired": true
+      },
+      "sourceRefs": [
+        "f1-drivers-2026",
+        "f1-driver-numbers-2026",
+        "f1-driver-standings-2026"
+      ]
+    },
+    {
+      "id": "alexander-albon",
+      "name": "Alexander Albon",
+      "code": "ALB",
+      "raceNumber": 23,
+      "nationality": {
+        "code": "THA",
+        "label": "Thai"
+      },
+      "teamId": "williams",
+      "season": 2026,
+      "standings": {
+        "position": 16,
+        "points": 5,
+        "snapshotDate": "2026-07-22",
+        "provenance": "officialSnapshot",
+        "sourceRefs": [
+          "f1-driver-standings-2026"
+        ]
+      },
+      "experienceBand": "experienced",
+      "strategyModelSeed": {
+        "racePaceIndex": 73.9,
+        "tyreManagementMultiplier": 1.014,
+        "wetSkillIndex": 81.4,
+        "trafficAndOvertakingIndex": 78.0,
+        "outLapWarmupMultiplier": 1.0,
+        "riskTolerance": 0.5,
+        "confidence": "low",
+        "provenance": "modelDerivedFrom2026PointsAndExperienceBand",
+        "calibrationRequired": true
+      },
+      "sourceRefs": [
+        "f1-drivers-2026",
+        "f1-driver-numbers-2026",
+        "f1-driver-standings-2026"
+      ]
+    },
+    {
+      "id": "esteban-ocon",
+      "name": "Esteban Ocon",
+      "code": "OCO",
+      "raceNumber": 31,
+      "nationality": {
+        "code": "FRA",
+        "label": "French"
+      },
+      "teamId": "haas",
+      "season": 2026,
+      "standings": {
+        "position": 17,
+        "points": 3,
+        "snapshotDate": "2026-07-22",
+        "provenance": "officialSnapshot",
+        "sourceRefs": [
+          "f1-driver-standings-2026"
+        ]
+      },
+      "experienceBand": "experienced",
+      "strategyModelSeed": {
+        "racePaceIndex": 73.0,
+        "tyreManagementMultiplier": 1.015,
+        "wetSkillIndex": 81.0,
+        "trafficAndOvertakingIndex": 77.5,
+        "outLapWarmupMultiplier": 1.0,
+        "riskTolerance": 0.5,
+        "confidence": "low",
+        "provenance": "modelDerivedFrom2026PointsAndExperienceBand",
+        "calibrationRequired": true
+      },
+      "sourceRefs": [
+        "f1-drivers-2026",
+        "f1-driver-numbers-2026",
+        "f1-driver-standings-2026"
+      ]
+    },
+    {
+      "id": "fernando-alonso",
+      "name": "Fernando Alonso",
+      "code": "ALO",
+      "raceNumber": 14,
+      "nationality": {
+        "code": "ESP",
+        "label": "Spanish"
+      },
+      "teamId": "aston-martin",
+      "season": 2026,
+      "standings": {
+        "position": 18,
+        "points": 1,
+        "snapshotDate": "2026-07-22",
+        "provenance": "officialSnapshot",
+        "sourceRefs": [
+          "f1-driver-standings-2026"
+        ]
+      },
+      "experienceBand": "veteran",
+      "strategyModelSeed": {
+        "racePaceIndex": 71.8,
+        "tyreManagementMultiplier": 1.015,
+        "wetSkillIndex": 82.6,
+        "trafficAndOvertakingIndex": 78.1,
+        "outLapWarmupMultiplier": 1.0,
+        "riskTolerance": 0.5,
+        "confidence": "low",
+        "provenance": "modelDerivedFrom2026PointsAndExperienceBand",
+        "calibrationRequired": true
+      },
+      "sourceRefs": [
+        "f1-drivers-2026",
+        "f1-driver-numbers-2026",
+        "f1-driver-standings-2026"
+      ]
+    },
+    {
+      "id": "nico-hulkenberg",
+      "name": "Nico Hulkenberg",
+      "code": "HUL",
+      "raceNumber": 27,
+      "nationality": {
+        "code": "GER",
+        "label": "German"
+      },
+      "teamId": "audi",
+      "season": 2026,
+      "standings": {
+        "position": 19,
+        "points": 0,
+        "snapshotDate": "2026-07-22",
+        "provenance": "officialSnapshot",
+        "sourceRefs": [
+          "f1-driver-standings-2026"
+        ]
+      },
+      "experienceBand": "veteran",
+      "strategyModelSeed": {
+        "racePaceIndex": 70.0,
+        "tyreManagementMultiplier": 1.017,
+        "wetSkillIndex": 82.0,
+        "trafficAndOvertakingIndex": 76.9,
+        "outLapWarmupMultiplier": 1.0,
+        "riskTolerance": 0.5,
+        "confidence": "low",
+        "provenance": "modelDerivedFrom2026PointsAndExperienceBand",
+        "calibrationRequired": true
+      },
+      "sourceRefs": [
+        "f1-drivers-2026",
+        "f1-driver-numbers-2026",
+        "f1-driver-standings-2026"
+      ]
+    },
+    {
+      "id": "valtteri-bottas",
+      "name": "Valtteri Bottas",
+      "code": "BOT",
+      "raceNumber": 77,
+      "nationality": {
+        "code": "FIN",
+        "label": "Finnish"
+      },
+      "teamId": "cadillac",
+      "season": 2026,
+      "standings": {
+        "position": 20,
+        "points": 0,
+        "snapshotDate": "2026-07-22",
+        "provenance": "officialSnapshot",
+        "sourceRefs": [
+          "f1-driver-standings-2026"
+        ]
+      },
+      "experienceBand": "veteran",
+      "strategyModelSeed": {
+        "racePaceIndex": 70.0,
+        "tyreManagementMultiplier": 1.017,
+        "wetSkillIndex": 82.0,
+        "trafficAndOvertakingIndex": 76.9,
+        "outLapWarmupMultiplier": 1.0,
+        "riskTolerance": 0.5,
+        "confidence": "low",
+        "provenance": "modelDerivedFrom2026PointsAndExperienceBand",
+        "calibrationRequired": true
+      },
+      "sourceRefs": [
+        "f1-drivers-2026",
+        "f1-driver-numbers-2026",
+        "f1-driver-standings-2026"
+      ]
+    },
+    {
+      "id": "sergio-perez",
+      "name": "Sergio Perez",
+      "code": "PER",
+      "raceNumber": 11,
+      "nationality": {
+        "code": "MEX",
+        "label": "Mexican"
+      },
+      "teamId": "cadillac",
+      "season": 2026,
+      "standings": {
+        "position": 21,
+        "points": 0,
+        "snapshotDate": "2026-07-22",
+        "provenance": "officialSnapshot",
+        "sourceRefs": [
+          "f1-driver-standings-2026"
+        ]
+      },
+      "experienceBand": "veteran",
+      "strategyModelSeed": {
+        "racePaceIndex": 70.0,
+        "tyreManagementMultiplier": 1.017,
+        "wetSkillIndex": 82.0,
+        "trafficAndOvertakingIndex": 76.9,
+        "outLapWarmupMultiplier": 1.0,
+        "riskTolerance": 0.5,
+        "confidence": "low",
+        "provenance": "modelDerivedFrom2026PointsAndExperienceBand",
+        "calibrationRequired": true
+      },
+      "sourceRefs": [
+        "f1-drivers-2026",
+        "f1-driver-numbers-2026",
+        "f1-driver-standings-2026"
+      ]
+    },
+    {
+      "id": "lance-stroll",
+      "name": "Lance Stroll",
+      "code": "STR",
+      "raceNumber": 18,
+      "nationality": {
+        "code": "CAN",
+        "label": "Canadian"
+      },
+      "teamId": "aston-martin",
+      "season": 2026,
+      "standings": {
+        "position": 22,
+        "points": 0,
+        "snapshotDate": "2026-07-22",
+        "provenance": "officialSnapshot",
+        "sourceRefs": [
+          "f1-driver-standings-2026"
+        ]
+      },
+      "experienceBand": "experienced",
+      "strategyModelSeed": {
+        "racePaceIndex": 70.0,
+        "tyreManagementMultiplier": 1.019,
+        "wetSkillIndex": 80.0,
+        "trafficAndOvertakingIndex": 75.5,
+        "outLapWarmupMultiplier": 1.0,
+        "riskTolerance": 0.5,
+        "confidence": "low",
+        "provenance": "modelDerivedFrom2026PointsAndExperienceBand",
+        "calibrationRequired": true
+      },
+      "sourceRefs": [
+        "f1-drivers-2026",
+        "f1-driver-numbers-2026",
+        "f1-driver-standings-2026"
+      ]
+    }
+  ],
+  "circuits": {
+    "season": 2026,
+    "circuits": [
+      {
+        "id": "silverstone",
+        "name": "Silverstone Circuit",
+        "grandPrix": "British Grand Prix",
+        "country": "United Kingdom",
+        "eventFormat": "alternative",
+        "hasSprint": true,
+        "official": {
+          "lengthKm": 5.891,
+          "raceLaps": 52,
+          "raceDistanceKm": 306.198,
+          "firstGrandPrix": 1950,
+          "weekendTyres": {
+            "hard": "C1",
+            "medium": "C2",
+            "soft": "C3"
+          },
+          "sourceRefs": [
+            "f1-silverstone-2026",
+            "pirelli-silverstone-2026-preview"
+          ]
+        },
+        "trackModelSeed": {
+          "speedProfile": "high-speed",
+          "tyreSeverity": 5,
+          "lateralLoad": 5,
+          "longitudinalLoad": 3,
+          "abrasiveness": 4,
+          "frontRearLimitation": "front",
+          "criticalTyre": "front-left",
+          "trackEvolution": 3,
+          "windSensitivity": 5,
+          "rainVariability": 3,
+          "overtakingDifficulty": 3,
+          "estimatedGreenFlagPitLossSeconds": 23.5,
+          "safetyCarProbability": 0.34,
+          "confidence": "low-to-medium",
+          "calibrationRequired": true
+        },
+        "weatherInputsRecommended": [
+          "airTemperatureC",
+          "trackTemperatureC",
+          "humidityPct",
+          "windSpeedKph",
+          "windDirectionDeg",
+          "rainProbabilityPct",
+          "rainIntensityMmPerHour",
+          "trackWetnessPct",
+          "cloudCoverPct"
+        ],
+        "2026RaceReference": {
+          "winner": "charles-leclerc",
+          "plannedBaseline": [
+            "C2",
+            "C1"
+          ],
+          "observedSummary": "The grid started on C2 and switched to C1; late neutralisations caused additional stops and widespread C3 use.",
+          "sourceRefs": [
+            "f1-silverstone-2026",
+            "pirelli-silverstone-2026-race"
+          ]
+        },
+        "dryStrategySeeds": [
+          {
+            "id": "silverstone-medium-hard",
+            "stints": [
+              {
+                "compound": "C2",
+                "lapStart": 1,
+                "pitWindow": {
+                  "min": 18,
+                  "max": 25
+                }
+              },
+              {
+                "compound": "C1",
+                "toRaceEnd": true
+              }
+            ],
+            "risk": "low"
+          },
+          {
+            "id": "silverstone-hard-medium",
+            "stints": [
+              {
+                "compound": "C1",
+                "lapStart": 1,
+                "pitWindow": {
+                  "min": 28,
+                  "max": 36
+                }
+              },
+              {
+                "compound": "C2",
+                "toRaceEnd": true
+              }
+            ],
+            "risk": "medium"
+          },
+          {
+            "id": "silverstone-medium-hard-soft",
+            "stints": [
+              {
+                "compound": "C2",
+                "lapStart": 1,
+                "pitWindow": {
+                  "min": 17,
+                  "max": 23
+                }
+              },
+              {
+                "compound": "C1",
+                "pitWindow": {
+                  "min": 42,
+                  "max": 47
+                }
+              },
+              {
+                "compound": "C3",
+                "toRaceEnd": true
+              }
+            ],
+            "risk": "medium-high"
+          }
+        ]
+      },
+      {
+        "id": "spa-francorchamps",
+        "name": "Circuit de Spa-Francorchamps",
+        "grandPrix": "Belgian Grand Prix",
+        "country": "Belgium",
+        "eventFormat": "standard",
+        "hasSprint": false,
+        "official": {
+          "lengthKm": 7.004,
+          "raceLaps": 44,
+          "raceDistanceKm": 308.054,
+          "firstGrandPrix": 1950,
+          "weekendTyres": {
+            "hard": "C2",
+            "medium": "C3",
+            "soft": "C4"
+          },
+          "sourceRefs": [
+            "f1-spa-2026",
+            "pirelli-spa-2026-preview"
+          ]
+        },
+        "trackModelSeed": {
+          "speedProfile": "high-speed-mixed",
+          "tyreSeverity": 4,
+          "lateralLoad": 4,
+          "longitudinalLoad": 4,
+          "abrasiveness": 3,
+          "frontRearLimitation": "balanced",
+          "criticalTyre": "track-condition-dependent",
+          "trackEvolution": 3,
+          "windSensitivity": 4,
+          "rainVariability": 5,
+          "overtakingDifficulty": 2,
+          "estimatedGreenFlagPitLossSeconds": 22.5,
+          "safetyCarProbability": 0.42,
+          "confidence": "low-to-medium",
+          "calibrationRequired": true
+        },
+        "weatherInputsRecommended": [
+          "airTemperatureC",
+          "trackTemperatureC",
+          "humidityPct",
+          "windSpeedKph",
+          "windDirectionDeg",
+          "rainProbabilityPct",
+          "rainIntensityMmPerHour",
+          "trackWetnessPct",
+          "sectorWetnessPct",
+          "cloudCoverPct",
+          "dryingRatePctPerLap"
+        ],
+        "sectorWeatherSupport": {
+          "enabled": true,
+          "sectors": [
+            "sector-1",
+            "sector-2",
+            "sector-3"
+          ],
+          "reason": "Spa can have materially different grip and rain conditions around its long lap."
+        },
+        "2026RaceReference": {
+          "winner": "kimi-antonelli",
+          "plannedBaseline": [
+            "C3",
+            "C2"
+          ],
+          "observedSummary": "The top three started on weekend Medium C3 and switched to Hard C2; cooler track temperatures reduced degradation.",
+          "sourceRefs": [
+            "f1-spa-2026",
+            "pirelli-spa-2026-race"
+          ]
+        },
+        "dryStrategySeeds": [
+          {
+            "id": "spa-medium-hard",
+            "stints": [
+              {
+                "compound": "C3",
+                "lapStart": 1,
+                "pitWindow": {
+                  "min": 16,
+                  "max": 24
+                }
+              },
+              {
+                "compound": "C2",
+                "toRaceEnd": true
+              }
+            ],
+            "risk": "low"
+          },
+          {
+            "id": "spa-hard-medium",
+            "stints": [
+              {
+                "compound": "C2",
+                "lapStart": 1,
+                "pitWindow": {
+                  "min": 27,
+                  "max": 32
+                }
+              },
+              {
+                "compound": "C3",
+                "toRaceEnd": true
+              }
+            ],
+            "risk": "medium"
+          },
+          {
+            "id": "spa-soft-hard",
+            "stints": [
+              {
+                "compound": "C4",
+                "lapStart": 1,
+                "pitWindow": {
+                  "min": 10,
+                  "max": 16
+                }
+              },
+              {
+                "compound": "C2",
+                "toRaceEnd": true
+              }
+            ],
+            "risk": "high"
+          }
+        ]
+      },
+      {
+        "id": "suzuka",
+        "name": "Suzuka Circuit",
+        "grandPrix": "Japanese Grand Prix",
+        "country": "Japan",
+        "eventFormat": "standard",
+        "hasSprint": false,
+        "official": {
+          "lengthKm": 5.807,
+          "raceLaps": 53,
+          "raceDistanceKm": 307.471,
+          "firstGrandPrix": 1987,
+          "weekendTyres": {
+            "hard": "C1",
+            "medium": "C2",
+            "soft": "C3"
+          },
+          "sourceRefs": [
+            "f1-suzuka-2026",
+            "pirelli-suzuka-2026-preview"
+          ]
+        },
+        "trackModelSeed": {
+          "speedProfile": "high-speed-technical",
+          "tyreSeverity": 5,
+          "lateralLoad": 5,
+          "longitudinalLoad": 3,
+          "abrasiveness": 4,
+          "frontRearLimitation": "front-balanced",
+          "criticalTyre": "front-left",
+          "trackEvolution": 4,
+          "windSensitivity": 4,
+          "rainVariability": 4,
+          "overtakingDifficulty": 4,
+          "estimatedGreenFlagPitLossSeconds": 22.0,
+          "safetyCarProbability": 0.31,
+          "confidence": "low-to-medium",
+          "calibrationRequired": true
+        },
+        "weatherInputsRecommended": [
+          "airTemperatureC",
+          "trackTemperatureC",
+          "humidityPct",
+          "windSpeedKph",
+          "windDirectionDeg",
+          "rainProbabilityPct",
+          "rainIntensityMmPerHour",
+          "trackWetnessPct",
+          "cloudCoverPct",
+          "rubberLevelPct"
+        ],
+        "2026RaceReference": {
+          "winner": "kimi-antonelli",
+          "plannedBaseline": [
+            "C2",
+            "C1"
+          ],
+          "observedSummary": "Nearly the entire grid started on C2 and switched to C1; a Safety Car benefited drivers who delayed their stop.",
+          "sourceRefs": [
+            "f1-suzuka-2026",
+            "pirelli-suzuka-2026-race"
+          ]
+        },
+        "dryStrategySeeds": [
+          {
+            "id": "suzuka-medium-hard",
+            "stints": [
+              {
+                "compound": "C2",
+                "lapStart": 1,
+                "pitWindow": {
+                  "min": 18,
+                  "max": 28
+                }
+              },
+              {
+                "compound": "C1",
+                "toRaceEnd": true
+              }
+            ],
+            "risk": "low"
+          },
+          {
+            "id": "suzuka-hard-medium",
+            "stints": [
+              {
+                "compound": "C1",
+                "lapStart": 1,
+                "pitWindow": {
+                  "min": 28,
+                  "max": 36
+                }
+              },
+              {
+                "compound": "C2",
+                "toRaceEnd": true
+              }
+            ],
+            "risk": "medium"
+          },
+          {
+            "id": "suzuka-medium-hard-soft",
+            "stints": [
+              {
+                "compound": "C2",
+                "lapStart": 1,
+                "pitWindow": {
+                  "min": 16,
+                  "max": 22
+                }
+              },
+              {
+                "compound": "C1",
+                "pitWindow": {
+                  "min": 43,
+                  "max": 48
+                }
+              },
+              {
+                "compound": "C3",
+                "toRaceEnd": true
+              }
+            ],
+            "risk": "high"
+          }
+        ]
+      }
+    ],
+    "warning": "Pit-loss, Safety Car probability and strategy-window values are model seeds. They are not official Formula 1 or Pirelli figures."
+  },
+  "tyres": {
+    "id": "pirelli-2026",
+    "season": 2026,
+    "officialRange": {
+      "slicks": [
+        "C1",
+        "C2",
+        "C3",
+        "C4",
+        "C5"
+      ],
+      "wetWeather": [
+        "INTERMEDIATE",
+        "WET"
+      ],
+      "hardest": "C1",
+      "softest": "C5",
+      "rimDiameterInches": 18,
+      "sourceRefs": [
+        "pirelli-2026-range"
+      ]
+    },
+    "compounds": [
+      {
+        "id": "C1",
+        "type": "slick",
+        "hardnessRank": 1,
+        "genericModelSeed": {
+          "relativePaceDeltaToC5SecondsPerLap": 1.2,
+          "baseDegradationSecondsPerLap": 0.035,
+          "warmupDifficulty": 0.85,
+          "temperatureWindowC": {
+            "min": 95,
+            "max": 120
+          }
+        }
+      },
+      {
+        "id": "C2",
+        "type": "slick",
+        "hardnessRank": 2,
+        "genericModelSeed": {
+          "relativePaceDeltaToC5SecondsPerLap": 0.85,
+          "baseDegradationSecondsPerLap": 0.05,
+          "warmupDifficulty": 0.7,
+          "temperatureWindowC": {
+            "min": 90,
+            "max": 115
+          }
+        }
+      },
+      {
+        "id": "C3",
+        "type": "slick",
+        "hardnessRank": 3,
+        "genericModelSeed": {
+          "relativePaceDeltaToC5SecondsPerLap": 0.55,
+          "baseDegradationSecondsPerLap": 0.07,
+          "warmupDifficulty": 0.55,
+          "temperatureWindowC": {
+            "min": 85,
+            "max": 110
+          }
+        }
+      },
+      {
+        "id": "C4",
+        "type": "slick",
+        "hardnessRank": 4,
+        "genericModelSeed": {
+          "relativePaceDeltaToC5SecondsPerLap": 0.28,
+          "baseDegradationSecondsPerLap": 0.1,
+          "warmupDifficulty": 0.38,
+          "temperatureWindowC": {
+            "min": 80,
+            "max": 105
+          }
+        }
+      },
+      {
+        "id": "C5",
+        "type": "slick",
+        "hardnessRank": 5,
+        "genericModelSeed": {
+          "relativePaceDeltaToC5SecondsPerLap": 0.0,
+          "baseDegradationSecondsPerLap": 0.14,
+          "warmupDifficulty": 0.2,
+          "temperatureWindowC": {
+            "min": 75,
+            "max": 100
+          }
+        }
+      },
+      {
+        "id": "INTERMEDIATE",
+        "type": "wet",
+        "genericModelSeed": {
+          "optimalTrackWetnessPct": {
+            "min": 15,
+            "max": 65
+          },
+          "standingWaterTolerance": "medium"
+        }
+      },
+      {
+        "id": "WET",
+        "type": "wet",
+        "genericModelSeed": {
+          "optimalTrackWetnessPct": {
+            "min": 55,
+            "max": 100
+          },
+          "standingWaterTolerance": "high"
+        }
+      }
+    ],
+    "warning": "All pace, degradation and temperature-window values are generic model seeds, not official Pirelli performance data. Calibrate them with practice and race telemetry."
+  },
+  "regulations": {
+    "id": "fia-2026-sporting-issue-07",
+    "season": 2026,
+    "document": {
+      "section": "B",
+      "title": "Sporting Regulations",
+      "issue": "07",
+      "date": "2026-06-25",
+      "status": "published",
+      "sourceRefs": [
+        "fia-sporting-2026-issue-07"
+      ]
+    },
+    "tyreRulesImplemented": [
+      {
+        "id": "B6.1.1",
+        "rule": "At each competition the supplier provides three dry-weather specifications, one Intermediate specification and one Wet specification.",
+        "validatorKey": "eventProvidesThreeDryOneIntermediateOneWet"
+      },
+      {
+        "id": "B6.3.4",
+        "rule": "Standard-format events allow 13 dry sets per driver; alternative/Sprint format allows 12 dry sets. The normal allocation includes five Intermediate sets and two Wet sets, subject to the regulation's exceptions.",
+        "validatorKey": "allocationByEventFormat"
+      },
+      {
+        "id": "B6.3.6",
+        "rule": "Unless Intermediate or Wet tyres were used in the race, each driver must use at least two different dry specifications, including at least one mandatory dry-weather race specification.",
+        "validatorKey": "twoDrySpecificationsUnlessWetUsed",
+        "failureOutcome": "disqualification unless the suspended-race exception applies"
+      },
+      {
+        "id": "B6.3.7",
+        "rule": "When the formation lap starts behind the Safety Car, Wet tyres are compulsory until the Safety Car's orange lights are extinguished and it returns to the pit lane.",
+        "validatorKey": "wetCompulsoryForSafetyCarStart"
+      },
+      {
+        "id": "B6.3.9",
+        "rule": "At an alternative-format event, SQ1 and SQ2 use a new set of the Medium specification; SQ3 uses the Soft specification.",
+        "validatorKey": "sprintQualifyingCompoundRestrictions"
+      }
+    ],
+    "validatorDefaults": {
+      "dryRace": {
+        "minimumDistinctDrySpecifications": 2,
+        "mustIncludeMandatoryRaceSpecification": true,
+        "wetWeatherException": true
+      },
+      "allocations": {
+        "standard": {
+          "drySets": 13,
+          "intermediateSets": 5,
+          "wetSets": 2
+        },
+        "alternative": {
+          "drySets": 12,
+          "intermediateSets": 5,
+          "wetSets": 2
+        }
+      }
+    }
+  },
+  "modelConfig": {
+    "id": "strategy-model-v0.1",
+    "status": "prototype",
+    "purpose": "Generate ranked tyre-strategy recommendations while keeping official facts separate from estimates.",
+    "coreEquations": {
+      "effectiveDegradationSecondsPerLap": "baseTyreDeg * circuitSeverityFactor * teamTyreDegMultiplier * driverTyreManagementMultiplier * temperatureFactor * trafficFactor * tyreAgeFactor",
+      "lapTimeSeconds": "cleanAirBaseline + compoundPaceDelta + fuelEffect + degradation + trafficLoss + weatherLoss",
+      "strategyTotalSeconds": "sum(projectedLapTimes) + sum(pitLosses) + riskPenalty",
+      "confidence": "dataCompleteness * modelCalibrationQuality * weatherCertainty * strategySeparation"
+    },
+    "weights": {
+      "expectedRaceTime": 0.72,
+      "risk": 0.18,
+      "trackPosition": 0.1
+    },
+    "conditionFactors": {
+      "trackTemperature": {
+        "coldThresholdC": 20,
+        "hotThresholdC": 42,
+        "coldHardTyreWarmupPenalty": 1.15,
+        "hotSoftTyreDegradationPenalty": 1.2
+      },
+      "traffic": {
+        "cleanAir": 1.0,
+        "light": 1.05,
+        "medium": 1.12,
+        "heavy": 1.22
+      },
+      "trackState": {
+        "dry": 1.0,
+        "damp": 1.35,
+        "wet": 1.8,
+        "standing-water": 2.4
+      }
+    },
+    "strategyGeneration": {
+      "maximumStops": 3,
+      "pitWindowWidthLaps": 6,
+      "returnTopPlans": 3,
+      "planLabels": [
+        "FASTEST_EXPECTED",
+        "LOWER_RISK",
+        "AGGRESSIVE_ALTERNATIVE"
+      ],
+      "discardIllegalStrategies": true,
+      "discardUnavailableTyreSets": true,
+      "discardStintsBeyondEstimatedTyreLife": true
+    },
+    "importantWarning": "The model seeds are deliberately conservative placeholders. Replace them with practice long-run data, race timing, actual tyre-set availability and weather forecasts before presenting recommendations as high confidence."
+  }
+}
+;

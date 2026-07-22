@@ -1,0 +1,129 @@
+<!doctype html>
+<html lang="ko">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width,initial-scale=1">
+  <meta name="theme-color" content="#080b0f">
+  <title>에이펙스 스트래티지 — 2026 레이스 전략 연구소</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Barlow+Condensed:wght@500;600;700;800&family=Inter:wght@400;500;600;700&family=Noto+Sans+KR:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="styles.css">
+  <link rel="stylesheet" href="korean.css">
+  <link rel="stylesheet" href="simulation.css">
+  <link rel="stylesheet" href="selection.css">
+  <link rel="stylesheet" href="track-view.css">
+  <link rel="stylesheet" href="real-track.css">
+  <link rel="stylesheet" href="tyre-theme.css">
+  <link rel="stylesheet" href="team-theme.css">
+  <link rel="stylesheet" href="official-media.css">
+  <link rel="stylesheet" href="broadcast-strategy.css">
+  <link rel="stylesheet" href="polish.css">
+</head>
+<body>
+  <header class="topbar">
+    <a class="brand" href="#"><span class="brand-mark">A</span><span>APEX<small>전략 연구소</small></span></a>
+    <nav><a class="active" href="#builder">전략 설계</a><a href="#simulation">레이스 시뮬레이션</a><a href="#circuits">서킷</a><a href="#method">방법론</a></nav>
+    <div class="status"><span class="pulse"></span> 2026 데이터 적용 <span class="snapshot">2026. 07. 22.</span></div>
+  </header>
+
+  <main id="builder">
+    <section class="hero-strip">
+      <div><p class="eyebrow">레이스 위크엔드 / 의사결정 지원</p><h1>레이스가 시작되기 전에 전략을 설계하세요.</h1></div>
+      <p class="hero-copy">입력한 조건에 따라 규정을 준수하는 타이어 전략을 비교합니다. 모든 결과에는 불확실성, 모델 출처와 전략 전환 조건이 표시됩니다.</p>
+    </section>
+
+    <div class="workspace">
+      <aside class="setup-panel">
+        <div class="panel-heading"><div><span class="step-index">01</span><p>시나리오 설정</p></div><button id="resetBtn" class="text-btn">초기화</button></div>
+        <label>서킷<select id="circuitSelect"></select></label>
+        <div class="track-card">
+          <div><p id="gpName">British Grand Prix</p><strong id="circuitName">Silverstone Circuit</strong></div>
+          <div class="track-stats"><span><b id="lapCount">52</b> 랩</span><span><b id="trackLength">5.891</b> KM</span><span><b id="pitLoss">23.5</b> 초 피트 손실</span></div>
+        </div>
+        <div class="field-row"><label>팀<select id="teamSelect"></select></label><label>드라이버<select id="driverSelect"></select></label></div>
+        <div class="driver-chip"><img id="driverPortrait" alt="선택한 드라이버 공식 사진"><span id="driverNumber">63</span><div><b id="driverName">George Russell</b><small id="driverMeta">MERCEDES · GBR</small></div><img id="teamLogo" class="team-logo" alt="선택한 팀 공식 로고"><em id="teamDot"></em></div>
+        <div class="official-car-card"><img id="officialTeamCar" alt="선택한 팀의 2026 공식 차량"><small>OFFICIAL 2026 CAR · FORMULA1.COM</small></div>
+        <div class="section-label"><span class="step-index">02</span> 주행 조건 <button class="mode-pill">실시간</button></div>
+        <div id="liveWeatherStatus" class="live-weather-status"><span class="weather-pulse"></span><div><b>현재 서킷 날씨 연결 중</b><small>Open-Meteo 실시간 모델 데이터</small></div></div>
+        <div class="range-head"><label>노면 온도</label><output id="trackTempOut">34°C</output></div>
+        <input id="trackTemp" type="range" min="10" max="60" value="34">
+        <div class="range-labels"><span>10°</span><span>60°</span></div>
+        <div class="field-row"><label>기온<input id="airTemp" type="number" value="23"><span class="suffix">°C</span></label><label>습도<input id="humidity" type="number" value="58"><span class="suffix">%</span></label></div>
+        <label>노면 상태<div class="segmented" id="trackState"><button class="active" data-value="dry">건조</button><button data-value="damp">습윤</button><button data-value="wet">젖음</button></div></label>
+        <div id="spaWeather" class="spa-weather hidden"><small>스파 섹터별 노면 습도</small><div><label>S1 <input type="range" min="0" max="100" value="8"></label><label>S2 <input type="range" min="0" max="100" value="22"></label><label>S3 <input type="range" min="0" max="100" value="12"></label></div></div>
+        <details><summary>고급 날씨 설정 <span>+</span></summary><div class="field-row"><label>풍속 KPH<input id="wind" type="number" value="14"></label><label>강수 확률<input id="rain" type="number" value="12"><span class="suffix">%</span></label></div></details>
+        <div class="section-label"><span class="step-index">03</span> 레이스 상황</div>
+        <div class="field-row"><label>그리드 순위<input id="gridPos" type="number" min="1" max="22" value="4"></label><div class="traffic-auto"><span>예상 트래픽</span><b id="trafficAutoLabel">보통</b><small id="trafficAutoMeta">서킷·순위 기반 자동 분석</small></div></div>
+        <details><summary>타이어 세트 보유 현황 <span>+</span></summary><div id="inventory" class="inventory"></div></details>
+        <div class="auto-update"><span>●</span><div><b>자동 계산 활성화</b><small>입력값이 바뀌면 전략이 즉시 갱신됩니다</small></div></div>
+      </aside>
+
+      <section class="results-panel">
+        <div class="results-head"><div><p class="eyebrow">추천 전략 / <span id="resultEvent">실버스톤</span></p><h2>레이스를 완주하는 세 가지 전략.</h2></div><div class="validity"><span>✓</span><div><b>FIA 규정 충족</b><small>섹션 B · 이슈 07</small></div></div></div>
+        <div id="assumptionNotice" class="notice"><span>i</span><p><b>입력한 조건을 기준으로 추천한 전략입니다.</b> 결과는 모델 추정치이며 보장되지 않습니다. 연습주행 데이터로 보정하기 전에는 신뢰도가 제한됩니다.</p></div>
+        <div id="strategyCards" class="strategy-grid"></div>
+        <section class="comparison">
+          <div class="comparison-head"><div><p class="eyebrow">레이스 뷰</p><h3>스틴트 비교</h3></div><div class="legend"><span><i class="tyre medium"></i>미디엄</span><span><i class="tyre hard"></i>하드</span><span><i class="tyre soft"></i>소프트</span></div></div>
+          <div id="timeline" class="timeline"></div>
+        </section>
+        <div class="insight-grid">
+          <article><p class="eyebrow">전략 전환 조건</p><h3 id="triggerTitle">왼쪽 앞 타이어를 주시하세요.</h3><p id="triggerText">14랩 이전에 성능 저하가 랩당 0.13초를 넘으면 첫 피트스톱을 3랩 앞당기세요.</p></article>
+          <article><p class="eyebrow">이 순위가 나온 이유</p><ul id="rankingReasons"></ul></article>
+          <article class="confidence-card"><p class="eyebrow">모델 신뢰도</p><strong id="confidenceValue">62%</strong><div class="meter"><i id="confidenceMeter"></i></div><p id="confidenceNote">낮음~보통 · 범용 페이스 초기값</p></article>
+        </div>
+        <section id="simulation" class="simulation-panel">
+          <div class="simulation-header">
+            <div><p class="eyebrow">레이스 시뮬레이션</p><h3>선택한 전략으로 레이스 전개 보기</h3><p>입력 조건과 1순위 전략을 바탕으로 랩별 위치, 간격, 타이어 상태와 주요 이벤트를 계산합니다.</p></div>
+            <button id="runSimulationBtn" class="sim-button">시뮬레이션 실행</button>
+          </div>
+          <div class="sim-summary">
+            <div><small>현재 랩</small><strong id="simLap">0 / 52</strong></div>
+            <div><small>레이스 위치</small><strong id="simPosition">P4</strong></div>
+            <div><small>선두와의 간격</small><strong id="simGap">+0.0초</strong></div>
+            <div><small>타이어 상태</small><strong id="simTyreHealth">100%</strong></div>
+            <div><small>현재 컴파운드</small><strong id="simCompound">미디엄</strong></div>
+          </div>
+          <div class="circuit-view">
+            <div class="circuit-view-head"><div><small>GPS 기반 실제 서킷 레이아웃</small><strong id="liveCircuitName">실버스톤 서킷</strong></div><div class="live-team"><span id="liveTeamColor"></span><div><small id="liveTeamName">MERCEDES</small><b id="liveDriverName">George Russell</b></div></div></div>
+            <div class="circuit-canvas">
+              <svg id="circuitSvg" viewBox="0 0 900 480" role="img" aria-label="선택한 서킷에서 움직이는 레이스카">
+                <defs><filter id="trackGlow"><feGaussianBlur stdDeviation="5" result="blur"/><feMerge><feMergeNode in="blur"/><feMergeNode in="SourceGraphic"/></feMerge></filter></defs>
+                <path id="circuitShadow" class="circuit-shadow" d=""></path>
+                <path id="circuitPath" class="circuit-path" d=""></path>
+                <path id="circuitCenter" class="circuit-center" d=""></path>
+                <path id="pitLanePath" class="pit-lane-path" d=""></path>
+                <g id="pitLaneLabels"></g>
+                <g id="turnMarkers"></g>
+                <g id="startLine"></g>
+                <g id="carMarker"><circle class="car-halo" r="34"></circle><image id="liveCarImage" x="-46" y="-24" width="92" height="48"></image><text id="carPositionLabel" x="34" y="5">P4</text></g>
+              </svg>
+              <div class="circuit-overlay"><span id="trackSector">SECTOR 1</span><b id="trackLapReadout">LAP 0 / 52</b><small id="trackSpeed">0 KM/H</small></div>
+            </div>
+            <div id="teamCarGallery" class="team-car-gallery"></div>
+            <p class="track-source">트랙 중심선: GPS GeoJSON · 코너 수와 피트 레이아웃 검증: FIA 2026 Circuit Maps / Formula1.com Circuit Guides</p>
+          </div>
+          <div class="sim-track">
+            <div class="sim-track-head"><span id="simStatus">시뮬레이션 준비 완료</span><span id="simWeather">건조 · 노면 34°C</span></div>
+            <svg id="positionChart" viewBox="0 0 900 230" role="img" aria-label="랩별 레이스 위치 그래프"></svg>
+            <input id="simScrubber" type="range" min="0" max="52" value="0">
+            <div class="sim-controls"><button id="simPlayPause">▶ 재생</button><button id="simStop">■ 정지</button><button id="simRestart">↺ 처음부터</button><label>속도<select id="simSpeed"><option value="1300">1×</option><option value="800" selected>2×</option><option value="420">5×</option></select></label></div>
+          </div>
+          <div class="sim-details">
+            <article><div class="sim-section-title"><span>랩별 진행 상황</span><small>선택한 랩까지의 이벤트</small></div><div id="eventLog" class="event-log"></div></article>
+            <article><div class="sim-section-title"><span>전체 레이스 계획</span><small>예정 및 실제 피트스톱</small></div><div id="racePlanTable" class="race-plan-table"></div></article>
+          </div>
+          <p class="sim-disclaimer">시뮬레이션은 입력값과 저신뢰도 모델 초기값을 사용한 예측입니다. 실제 레이스 결과가 아닙니다.</p>
+        </section>
+      </section>
+    </div>
+
+    <section id="circuits" class="circuit-section"><p class="eyebrow">지원 이벤트</p><h2>세 서킷, 서로 다른 세 가지 과제.</h2><div id="circuitCards" class="circuit-grid"></div></section>
+    <section id="method" class="method-section"><div><p class="eyebrow">공개된 방법론</p><h2>불확실성을 숨기지 않습니다.</h2></div><p>타이어 성능 저하, 서킷 가혹도, 드라이버·팀 보정값, 온도와 피트 손실을 종합해 전략을 산출합니다. 트래픽은 Formula 1 공식 최근 10개 개최분의 레이스 하이라이트·결과에서 관찰한 서킷별 필드 밀집 패턴을 출발 순위에 따라 자동 적용하며 사용자가 변경할 수 없습니다.</p><div class="provenance"><span>● 공식 정보</span><span>◆ 측정 입력값</span><span>▲ 모델 추정치</span><span>■ 파생 결과</span></div></section>
+  </main>
+  <footer><span>APEX 전략 연구소 / 2026 프로토타입</span><span>모델 v0.1 · 데이터 기준일 2026년 7월 22일 · Formula 1과 공식 제휴 관계가 없습니다</span></footer>
+  <script src="data.js"></script>
+  <script src="track-data.js"></script>
+  <script src="app.js"></script>
+</body>
+</html>

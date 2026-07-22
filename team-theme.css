@@ -1,0 +1,17 @@
+body {
+  background:
+    radial-gradient(circle at 8% 10%, color-mix(in srgb, var(--team-secondary) 9%, transparent), transparent 27%),
+    radial-gradient(circle at 92% 3%, color-mix(in srgb, var(--accent) 7%, transparent), transparent 24%),
+    var(--bg);
+  transition: background .5s ease;
+}
+.topbar { box-shadow: inset 0 -1px color-mix(in srgb, var(--accent) 28%, transparent); }
+.brand-mark, .generate-btn { background: var(--accent); }
+nav a.active:after { background: var(--accent); }
+.step-index { color: var(--accent); border-color: color-mix(in srgb, var(--accent) 38%, #242b33); }
+.track-card { border-top-color: var(--accent); }
+.mode-pill { color: var(--accent); border-color: color-mix(in srgb, var(--accent) 35%, #303820); }
+input[type=range] { accent-color: var(--accent); }
+.segmented button.active { background: var(--accent); border-color: var(--accent); }
+.simulation-panel { --accent: var(--sim-accent); }
+.auto-update{display:flex;align-items:center;gap:9px;margin-top:19px;padding:11px;border:1px solid color-mix(in srgb,var(--accent) 35%,var(--line));background:color-mix(in srgb,var(--accent) 6%,#10151a)}.auto-update>span{color:var(--accent);font-size:8px}.auto-update b,.auto-update small{display:block}.auto-update b{font-size:9px}.auto-update small{font-size:7px;color:#75808a;margin-top:3px}

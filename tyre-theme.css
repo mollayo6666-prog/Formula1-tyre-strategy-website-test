@@ -1,0 +1,30 @@
+.simulation-panel {
+  --sim-accent: #ffd431;
+  transition: border-color .45s, box-shadow .45s, background .45s;
+  border-color: color-mix(in srgb, var(--sim-accent) 42%, var(--line));
+  box-shadow: inset 0 1px color-mix(in srgb, var(--sim-accent) 35%, transparent);
+}
+.simulation-panel .circuit-canvas {
+  background: radial-gradient(circle at 50% 45%, color-mix(in srgb, var(--sim-accent) 12%, #172129) 0, #0a0f13 58%, #06090b 100%);
+  transition: background .45s;
+}
+.simulation-panel .car-halo {
+  fill: color-mix(in srgb, var(--sim-accent) 9%, transparent);
+  stroke: color-mix(in srgb, var(--sim-accent) 55%, transparent);
+}
+.simulation-panel #carPositionLabel,
+.simulation-panel #trackSector,
+.simulation-panel .sim-track-head span:first-child,
+.simulation-panel .event-row span:first-child {
+  color: var(--sim-accent);
+  fill: var(--sim-accent);
+  transition: color .45s, fill .45s;
+}
+.simulation-panel .circuit-overlay { border-left-color: var(--sim-accent); }
+.simulation-panel .chart-line { stroke: var(--sim-accent); }
+.simulation-panel .chart-point { fill: var(--sim-accent); }
+.simulation-panel .sim-button { background: var(--sim-accent); }
+.simulation-panel .meter i { background: var(--sim-accent); }
+.simulation-panel[data-tyre="soft"] { background: linear-gradient(180deg, #190b0f 0, #0a0e12 180px); }
+.simulation-panel[data-tyre="medium"] { background: linear-gradient(180deg, #18160a 0, #0a0e12 180px); }
+.simulation-panel[data-tyre="hard"] { background: linear-gradient(180deg, #171a1c 0, #0a0e12 180px); }

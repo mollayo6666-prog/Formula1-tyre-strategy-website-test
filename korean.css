@@ -1,0 +1,3 @@
+body { font-family: "Noto Sans KR", Inter, Arial, sans-serif; word-break: keep-all; }
+h1, h2, h3 { font-family: "Noto Sans KR", "Barlow Condensed", sans-serif; letter-spacing: -0.045em; }
+.brand, .track-card strong, .driver-chip > span, .range-head output, .time-row b, .confidence-card strong, .circuit-grid .number { font-family: "Noto Sans KR", "Barlow Condensed", sans-serif; }

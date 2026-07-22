@@ -1,0 +1,31 @@
+.track-source {
+  margin: 0;
+  padding: 7px 12px;
+  border-top: 1px solid var(--line);
+  color: #56616a;
+  font-size: 7px;
+  text-align: right;
+}
+.pit-lane-path {
+  fill: none;
+  stroke: #e8ff32;
+  stroke-width: 8;
+  stroke-linecap: round;
+  stroke-dasharray: 12 7;
+  filter: drop-shadow(0 0 5px #e8ff3266);
+}
+.pit-label circle { fill: #e8ff32; stroke: #080b0d; stroke-width: 2; }
+.pit-label text {
+  fill: #e8ff32;
+  font: 800 9px Inter, sans-serif;
+  paint-order: stroke;
+  stroke: #080b0d;
+  stroke-width: 4px;
+}
+.turn-marker line { stroke: #6e7881; stroke-width: 1; }
+.turn-marker circle { fill: #11181d; stroke: #dce3e7; stroke-width: 1.5; }
+.turn-marker text {
+  fill: #fff;
+  font: 800 9px Inter, sans-serif;
+  text-anchor: middle;
+}
