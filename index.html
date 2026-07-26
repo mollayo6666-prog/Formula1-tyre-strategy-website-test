@@ -19,12 +19,15 @@
   <link rel="stylesheet" href="official-media.css">
   <link rel="stylesheet" href="broadcast-strategy.css">
   <link rel="stylesheet" href="polish.css">
+  <link rel="stylesheet" href="history.css">
+  <link rel="stylesheet" href="history-tables.css">
+  <link rel="stylesheet" href="real-strategy.css">
+  <link rel="stylesheet" href="tyre-colors.css">
 </head>
 <body>
   <header class="topbar">
     <a class="brand" href="#"><span class="brand-mark">A</span><span>APEX<small>전략 연구소</small></span></a>
-    <nav><a class="active" href="#builder">전략 설계</a><a href="#simulation">레이스 시뮬레이션</a><a href="#circuits">서킷</a><a href="#method">방법론</a></nav>
-    <div class="status"><span class="pulse"></span> 2026 데이터 적용 <span class="snapshot">2026. 07. 22.</span></div>
+    <nav><a class="active" href="#builder">전략 설계</a><a href="#simulation">레이스 시뮬레이션</a></nav>
   </header>
 
   <main id="builder">
@@ -50,11 +53,12 @@
         <input id="trackTemp" type="range" min="10" max="60" value="34">
         <div class="range-labels"><span>10°</span><span>60°</span></div>
         <div class="field-row"><label>기온<input id="airTemp" type="number" value="23"><span class="suffix">°C</span></label><label>습도<input id="humidity" type="number" value="58"><span class="suffix">%</span></label></div>
-        <label>노면 상태<div class="segmented" id="trackState"><button class="active" data-value="dry">건조</button><button data-value="damp">습윤</button><button data-value="wet">젖음</button></div></label>
+        <label>노면 상태<div class="segmented" id="trackState"><button class="active" data-value="dry">건조</button><button data-value="damp">비</button><button data-value="wet">폭우</button></div></label>
         <div id="spaWeather" class="spa-weather hidden"><small>스파 섹터별 노면 습도</small><div><label>S1 <input type="range" min="0" max="100" value="8"></label><label>S2 <input type="range" min="0" max="100" value="22"></label><label>S3 <input type="range" min="0" max="100" value="12"></label></div></div>
         <details><summary>고급 날씨 설정 <span>+</span></summary><div class="field-row"><label>풍속 KPH<input id="wind" type="number" value="14"></label><label>강수 확률<input id="rain" type="number" value="12"><span class="suffix">%</span></label></div></details>
         <div class="section-label"><span class="step-index">03</span> 레이스 상황</div>
-        <div class="field-row"><label>그리드 순위<input id="gridPos" type="number" min="1" max="22" value="4"></label><div class="traffic-auto"><span>예상 트래픽</span><b id="trafficAutoLabel">보통</b><small id="trafficAutoMeta">서킷·순위 기반 자동 분석</small></div></div>
+        <div class="field-row"><label>예상 스타팅 그리드<input id="gridPos" type="number" min="1" max="22" value="4"><small id="gridEstimateMeta">차량·드라이버·서킷 기반 예선 예측</small></label><div class="traffic-auto"><span>예상 트래픽</span><b id="trafficAutoLabel">보통</b><small id="trafficAutoMeta">서킷·순위 기반 자동 분석</small></div></div>
+        <details class="qualifying-forecast"><summary><span>전체 예상 퀄리파잉 결과</span><b id="selectedGridBadge">P4</b></summary><div id="qualifyingGrid" class="qualifying-grid"></div></details>
         <details><summary>타이어 세트 보유 현황 <span>+</span></summary><div id="inventory" class="inventory"></div></details>
         <div class="auto-update"><span>●</span><div><b>자동 계산 활성화</b><small>입력값이 바뀌면 전략이 즉시 갱신됩니다</small></div></div>
       </aside>
@@ -72,6 +76,11 @@
           <article><p class="eyebrow">이 순위가 나온 이유</p><ul id="rankingReasons"></ul></article>
           <article class="confidence-card"><p class="eyebrow">모델 신뢰도</p><strong id="confidenceValue">62%</strong><div class="meter"><i id="confidenceMeter"></i></div><p id="confidenceNote">낮음~보통 · 범용 페이스 초기값</p></article>
         </div>
+        <section id="historyMatch" class="history-match" aria-live="polite">
+          <div class="history-match-head"><div><p class="eyebrow">실제 레이스 전략 비교</p><h3>역사 기록을 불러오는 중입니다</h3></div><span class="history-source">JOLPICA · FORMULA 1 ARCHIVE</span></div>
+          <div id="historyMatchBody" class="history-match-body"><p>2000년 이후 실제 경기 결과와 피트스톱 기록을 확인하고 있습니다.</p></div>
+          <details class="history-archive"><summary><span id="historyArchiveTitle">전체 그랑프리 아카이브</span><b>+</b></summary><div id="historyArchiveGrid" class="history-archive-grid"></div></details>
+        </section>
         <section id="simulation" class="simulation-panel">
           <div class="simulation-header">
             <div><p class="eyebrow">레이스 시뮬레이션</p><h3>선택한 전략으로 레이스 전개 보기</h3><p>입력 조건과 1순위 전략을 바탕으로 랩별 위치, 간격, 타이어 상태와 주요 이벤트를 계산합니다.</p></div>
@@ -118,12 +127,11 @@
       </section>
     </div>
 
-    <section id="circuits" class="circuit-section"><p class="eyebrow">지원 이벤트</p><h2>세 서킷, 서로 다른 세 가지 과제.</h2><div id="circuitCards" class="circuit-grid"></div></section>
-    <section id="method" class="method-section"><div><p class="eyebrow">공개된 방법론</p><h2>불확실성을 숨기지 않습니다.</h2></div><p>타이어 성능 저하, 서킷 가혹도, 드라이버·팀 보정값, 온도와 피트 손실을 종합해 전략을 산출합니다. 트래픽은 Formula 1 공식 최근 10개 개최분의 레이스 하이라이트·결과에서 관찰한 서킷별 필드 밀집 패턴을 출발 순위에 따라 자동 적용하며 사용자가 변경할 수 없습니다.</p><div class="provenance"><span>● 공식 정보</span><span>◆ 측정 입력값</span><span>▲ 모델 추정치</span><span>■ 파생 결과</span></div></section>
   </main>
-  <footer><span>APEX 전략 연구소 / 2026 프로토타입</span><span>모델 v0.1 · 데이터 기준일 2026년 7월 22일 · Formula 1과 공식 제휴 관계가 없습니다</span></footer>
   <script src="data.js"></script>
   <script src="track-data.js"></script>
+  <script src="history-data.js"></script>
+  <script src="tyre-history.js"></script>
   <script src="app.js"></script>
 </body>
 </html>

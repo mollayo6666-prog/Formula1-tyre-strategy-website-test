@@ -1,0 +1,6 @@
+/* Pirelli compound colours stay independent from team and simulator themes. */
+.tyre.soft{color:#ff253f!important}.tyre.medium{color:#ffd400!important}.tyre.hard{color:#f5f7f8!important}.tyre.inter{color:#38d67a!important}.tyre.wet{color:#2f8cff!important}
+.real-stint{--compound:#7b858d!important;color:#eef2f4!important;background:linear-gradient(135deg,color-mix(in srgb,var(--compound) 14%,#10161b),#080c10)!important;border-top:3px solid var(--compound)}
+.real-stint.soft{--compound:#ff253f!important}.real-stint.medium{--compound:#ffd400!important}.real-stint.hard{--compound:#f5f7f8!important}.real-stint.inter{--compound:#38d67a!important}.real-stint.wet{--compound:#2f8cff!important}
+.real-stint .tyre{color:var(--compound)!important;background:#080b0d}.real-stint b{color:var(--compound)!important}.real-stint small{color:#aeb8bf!important;opacity:1!important}
+.broadcast-segment.soft{background:#ff253f!important}.broadcast-segment.medium{background:#ffd400!important}.broadcast-segment.hard{background:#f5f7f8!important}.broadcast-segment.inter{background:#38d67a!important}.broadcast-segment.wet{background:#2f8cff!important}
